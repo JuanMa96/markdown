@@ -1,7 +1,30 @@
 ---
 import Layout from "../Layout/Layout.astro";
+import imgReact from "../img/react.svg";
+import imgPerfil from "../img/perfil.jpg"
 ---
 
-<Layout>
-    
+<Layout title="Markdown │ Acerca de">
+    <main class="bg-gradient-to-r from-cyan-500 to-blue-500 dark:from-cyan-900 dark:to-blue-900 min-h-screen flex items-center justify-center pt-28 px-3 pb-14">
+        <div class="container text-white p-3 shadow-xl rounded-2xl">
+            <h1 class="text-2xl mb-3 text-center">Acerca de</h1>
+            <div class="flex flex-col lg:flex-row gap-3 mx-3 items-center">
+                <div class="basis-3/6 flex flex-col gap-3 items-center">
+                    <h2 class="text-center text-xl">
+                        Juan María Mancedo
+                    </h2>
+                    <img src={imgPerfil} class="h-72 object-contain" alt="Imagen de Juan María Mancedo">
+                    <p class="text-lg">
+                        Esta página fue hecha por Juan María Mancedo a modo de práctica, aplicando conocimientos de React Hooks, Astro y Tailwind para un futuro portafolio de desarrollo web.
+                    </p>
+                    <p>Si necesitas un desarrollador web, podrías contactarme</p>
+                    <a href="https://wa.me/543794870926?text=Hola,%20necesito%20un%20desarrollador%20web" target="_blank" class="bg-yellow-400 text-black text-lg text-center py-1 px-3 rounded-lg">
+                        <span class="icon-whatsapp align-middle"> </span>Contactame</a>
+                </div>
+                <div class="basis-3/6">
+                    <img src={imgReact} class="max-w-full" alt="Imagen del logo de React con una mujer caminando en svg">
+                </div>
+            </div>
+        </div>
+    </main>
 </Layout>

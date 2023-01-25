@@ -15,21 +15,24 @@ export function Markdown(props){
     }
 
     return(
-        <div className="MarkdownEditor">
-          <h3>Entrada</h3>
-          <label htmlFor="markdown-content">
-            Introduce algún texto en markdown
-          </label>
-          <textarea
-            id="markdown-content"
-            onChange={handleChange}
-            defaultValue={value}
-          />
-          <h3>Salida</h3>
-          <div
-            className="content"
-            dangerouslySetInnerHTML={getRawMarkup()}
-          />
+        <div className='h-5/6 bg-sky-300 dark:bg-slate-800 dark:text-white p-3 shadow-xl rounded-2xl gap-3 mx-3 justify-items-center'>
+          <div className='flex flex-col items-center'>
+            <h2 className='text-2xl mb-3'>Entrada</h2>
+            <label htmlFor="markdown-content">
+              Introduce algún texto en markdown
+            </label>
+            <textarea
+              id="markdown-content"
+              onChange={handleChange}
+              defaultValue={value}
+              className="mb-3 text-black"
+            />
+            <h3>Salida</h3>
+            <div
+              className="content"
+              dangerouslySetInnerHTML={getRawMarkup()}
+            />
+          </div>
         </div>
     )
 } 

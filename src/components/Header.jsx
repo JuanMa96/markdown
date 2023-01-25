@@ -4,19 +4,16 @@ import { LargeHeader } from "./LargeHeader"
 
 
 export function Header(){
-    const consulta = window.matchMedia("(max-width: 600px)")
-    const [small, setSmall] = useState(consulta.matches)
+    const [small, setSmall] = useState(true)
 
     useEffect(()=>{
+        const consulta = window.matchMedia("(max-width: 600px)")
         setSmall(consulta.matches)
         consulta.onchange = ()=>{
             setSmall(consulta.matches)
         }
     }, [])
 
-    if(small){
-        return <SmallHeader />
-    }else{
-        return <LargeHeader />
-    }
+
+    return small? <SmallHeader />:<LargeHeader /> 
 }
