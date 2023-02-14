@@ -34,13 +34,13 @@ import "../assets/style/main.css"
 		<meta name="twitter:image:alt" content="Codigo html" />
 	</head>
 	<body class="font-sans">
+		<script>
+			import "../assets/js/redux"
+		</script>
 		<Header client:only/>
 		<div>
 			<slot/>
 		</div>
 		<Footer/>
-		<script>
-			import "../assets/js/redux"
-		</script>
 	</body>
 </html>
