@@ -1,10 +1,11 @@
 ---
 import Layout from "../Layout/Layout.astro";
-import imgReact from "../img/react.svg";
-import imgPerfil from "../img/perfil.jpg"
+import imgReact from "../assets/img/react.svg";
+import imgPerfil from "../assets/img/perfil.jpg"
+
 ---
 
-<Layout title="Markdown │ Acerca de">
+<Layout title="Markdown │ Acerca de" url="http://jmarkdown.netlify.com/about" domain="http://jmarkdown.netlify.com">
     <main class="bg-gradient-to-r from-cyan-500 to-blue-500 dark:from-cyan-900 dark:to-blue-900 min-h-screen flex items-center justify-center pt-28 px-3 pb-14">
         <div class="container text-white p-3 shadow-xl rounded-2xl">
             <h1 class="text-2xl mb-3 text-center">Acerca de</h1>
@@ -13,7 +14,7 @@ import imgPerfil from "../img/perfil.jpg"
                     <h2 class="text-center text-xl">
                         Juan María Mancedo
                     </h2>
-                    <img src={imgPerfil} class="h-72 object-contain" alt="Imagen de Juan María Mancedo">
+                    <img src={imgPerfil} class="h-72 object-contain" alt="Imagen de Juan María Mancedo" />
                     <p class="text-lg">
                         Esta página fue hecha por Juan María Mancedo a modo de práctica, aplicando conocimientos de React Hooks, Astro y Tailwind para un futuro portafolio de desarrollo web.
                     </p>

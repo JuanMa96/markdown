@@ -11,6 +11,27 @@ import "../assets/style/main.css"
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{Astro.props.title}</title>
+	
+		<meta name="author" content="Juan María Mancedo" />
+		<meta name="distribution" content="global" />
+		<meta name="MobileOptimized" content="width" />
+		<meta name="HandheldFriendly" content="true" />        
+		<meta name="theme-color" content="#1e3a8a" />
+		<meta property="og:type" content="website" />
+		<meta property="og:locate-alternate" content="es_ES" />
+		<meta name="twitter:card" content="summary" />
+
+		<meta name="description" content="Markdown by JM" />
+      
+		<meta property="og:url" content={Astro.props.url} />            
+  
+		<meta property="og:title" content={Astro.props.title} />
+		<meta property="og:image" content={`${Astro.props.domain}/cover.jpg`} />
+		<meta property="og:description" content="Markdown by JM" />
+		<meta name="twitter:title" content={Astro.props.title} />
+		<meta name="twitter:description" content="Markdown by JM" />
+		<meta name="twitter:image" content={`${Astro.props.domain}/cover.jpg`} />
+		<meta name="twitter:image:alt" content="Codigo html" />
 	</head>
 	<body class="font-sans">
 		<Header client:only/>
