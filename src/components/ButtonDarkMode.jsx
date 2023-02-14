@@ -1,39 +1,28 @@
 import { useLayoutEffect, useState } from "react"
+import { useSelector, useDispatch} from "react-redux";
 
 export function ButtonDarkMode(){
-    const [theme, setTheme] = useState("light")
+    const theme = useSelector((state)=>state)
+    const setTheme = useDispatch()
+    const [rep, setRep] = useState(0)
 
     useLayoutEffect(()=>{
-        if(!('theme' in localStorage)){
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches){
-                setTheme("dark")
-            }else{
-                setTheme("light")
-            }
+        if(rep == 0){
+            return setRep(1)  
         }else{
-            if(localStorage.getItem("theme") === 'dark'){
-                setTheme("dark")
-            }else{
-                setTheme("light")
+            if (theme == "dark") {
+                document.body.classList.add("dark")
+                localStorage.setItem("theme", "dark")
+            } else {
+                document.body.classList.remove("dark")
+                localStorage.setItem("theme", "light")
             }
-        }
-
-    }, [])
-
-    useLayoutEffect(()=>{
-        if (theme == "dark") {
-            document.body.classList.add("dark")
-            localStorage.setItem("theme", "dark")
-        } else {
-            document.body.classList.remove("dark")
-            localStorage.setItem("theme", "light")
-        }
-
+            console.log(`Continua con rep ${rep}`)
+        } 
     })
 
     function changeThemeMode(){
-        setTheme((prevTheme)=> prevTheme == "dark"? "light": "dark")
-        console.log(theme)
+        setTheme({type: "switch"})
     }
 
     return(

@@ -1,6 +1,7 @@
 ---
- import Footer from "../components/footer.astro";
+import Footer from "../components/footer.astro";
 import { Header } from "../components/Header";
+import "../assets/style/main.css"
 ---
 
 <html lang="en">
@@ -9,7 +10,6 @@ import { Header } from "../components/Header";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<link href="https://file.myfontastic.com/xSqABvTUTuM3BKXevKN7LQ/icons.css" rel="stylesheet">
 		<title>{Astro.props.title}</title>
 	</head>
 	<body class="font-sans">
@@ -18,5 +18,8 @@ import { Header } from "../components/Header";
 			<slot/>
 		</div>
 		<Footer/>
+		<script>
+			import "../assets/js/redux"
+		</script>
 	</body>
 </html>

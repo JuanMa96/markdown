@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import { SmallHeader } from "./SmallHeader"
 import { LargeHeader } from "./LargeHeader"
-
+import { Provider } from "react-redux";
+import {store} from "../assets/js/redux"
 
 export function Header(){
     const [small, setSmall] = useState(true)
@@ -15,5 +16,9 @@ export function Header(){
     }, [])
 
 
-    return small? <SmallHeader />:<LargeHeader /> 
+    return(
+        <Provider store={store}>
+            {small? <SmallHeader />:<LargeHeader />}
+        </Provider>
+    )
 }
